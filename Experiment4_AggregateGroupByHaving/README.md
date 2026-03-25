@@ -38,123 +38,143 @@ HAVING condition;
 
 **Question 1**
 --
--- Paste Question 1 here
+How many patients are there in each city?
 
 ```sql
--- Paste your SQL code below for Question 1
+SELECT Address, COUNT(*) AS TotalPatients FROM Patients GROUP BY Address;
 ```
 
 **Output:**
+--
+<img width="453" height="308" alt="image" src="https://github.com/user-attachments/assets/ec314813-45db-4c32-a2f2-cb894dbe88c9" />
 
-![Output1](output.png)
+
 
 **Question 2**
 ---
--- Paste Question 2 here
+How many medical records are there for each patient?
 
 ```sql
--- Paste your SQL code below for Question 2
+SELECT PatientID, COUNT(*) AS TotalRecords FROM MedicalRecords GROUP BY PatientID;
 ```
 
 **Output:**
+---
+<img width="852" height="957" alt="image" src="https://github.com/user-attachments/assets/ce8e5315-321b-4e32-941e-5f61f75412c1" />
 
-![Output2](output.png)
+
 
 **Question 3**
 ---
--- Paste Question 3 here
+Write a SQL Query to find how many medications are prescribed for each patient?
 
 ```sql
--- Paste your SQL code below for Question 3
+SELECT PatientID,count(*) AS AvgMedications FROM MedicalRecords GROUP BY PatientID;
 ```
 
 **Output:**
+---
+<img width="798" height="779" alt="image" src="https://github.com/user-attachments/assets/df70dc59-48fc-4096-8f50-f27ca6147e16" />
 
-![Output3](output.png)
+
 
 **Question 4**
 ---
--- Paste Question 4 here
+Write a SQL query to find Who has the highest income among employee living in California?
 
 ```sql
--- Paste your SQL code below for Question 4
+SELECT NAME,MAX(INCOME) AS 'max(income)' FROM employee WHERE city='California'
 ```
 
 **Output:**
+---
+<img width="997" height="537" alt="image" src="https://github.com/user-attachments/assets/77ccf2a1-a71a-4890-b9c1-850490ffe126" />
 
-![Output4](output.png)
+
 
 **Question 5**
 ---
--- Paste Question 5 here
+Write a SQL query to find the difference between the maximum and minimum price of fruits?
 
 ```sql
--- Paste your SQL code below for Question 5
+SELECT MAX(price) - MIN(price) AS price_diff FROM fruits;
 ```
 
 **Output:**
+---
+<img width="319" height="301" alt="image" src="https://github.com/user-attachments/assets/81cb7737-462f-45a2-b43b-5a877fa01a17" />
 
-![Output5](output.png)
+
 
 **Question 6**
 ---
--- Paste Question 6 here
+Write a SQL query to find the minimum purchase amount.
 
 ```sql
--- Paste your SQL code below for Question 6
+SELECT MIN(purch_amt) AS MINIMUM FROM orders;
 ```
 
 **Output:**
+---
+<img width="317" height="300" alt="image" src="https://github.com/user-attachments/assets/f69d55e1-26a8-4c6b-acb0-50825ead3ced" />
 
-![Output6](output.png)
+
 
 **Question 7**
 ---
--- Paste Question 7 here
+Write a SQL query to count the number of customers. Return number of customers.
 
 ```sql
--- Paste your SQL code below for Question 7
+SELECT COUNT(*) AS COUNT FROM customer;
 ```
 
 **Output:**
+---
+<img width="380" height="358" alt="image" src="https://github.com/user-attachments/assets/53751c76-65fc-453a-9f73-49a144b80597" />
 
-![Output7](output.png)
+
 
 **Question 8**
 ---
--- Paste Question 8 here
+Write the SQL query that accomplishes the grouping of data by age, calculates the total income for each age group, and includes only those age groups where the total income sum is greater than 1,000,000.
 
 ```sql
--- Paste your SQL code below for Question 8
+SELECT age, SUM(income) AS "SUM(income)" FROM employee GROUP BY age HAVING SUM(income) > 1000000;
 ```
 
 **Output:**
+---
+<img width="920" height="668" alt="image" src="https://github.com/user-attachments/assets/31eb517b-caaf-4c58-8ebc-49c83e444aba" />
 
-![Output8](output.png)
+
 
 **Question 9**
 ---
--- Paste Question 9 here
+Write the SQL query that accomplishes the selection of number of products for each category from products table which includes only those products where the category ID is greater than 2.
 
 ```sql
--- Paste your SQL code below for Question 9
+SELECT category_id,count(*) AS 'COUNT' FROM products WHERE  category_id > 2 GROUP BY category_id;
 ```
 
 **Output:**
+---
+<img width="617" height="368" alt="image" src="https://github.com/user-attachments/assets/317f8f11-1de9-45cf-ba36-c22e9fc81bc4" />
 
-![Output9](output.png)
+
 
 **Question 10**
 ---
--- Paste Question 10 here
+Write the SQL query that accomplishes the grouping of data by addresses, calculates the sum of salaries for each address, and excludes addresses where the total salary sum is not greater than 2000.
 
 ```sql
--- Paste your SQL code below for Question 10
+SELECT ADDRESS,SUM(SALARY) AS 'SUM(salary)' FROM CUSTOMER1 GROUP BY ADDRESS HAVING SUM(SALARY) > 2000;
 ```
 
 **Output:**
+---
+<img width="902" height="775" alt="image" src="https://github.com/user-attachments/assets/473467e5-b885-490b-90fe-5895f8485e4a" />
 
-![Output10](output.png)
+
 
 
 ## RESULT
